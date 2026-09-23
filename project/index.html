@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Учебный проект: интерактивная коллекция на JavaScript и DOM API."
+    />
+    <title>Интерактивная коллекция — ДЗ 3</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#collection" aria-label="К началу коллекции">
+        <span class="brand__index">INDEX</span>
+        <span class="brand__count">/ 06</span>
+      </a>
+
+      <p class="site-header__course">JavaScript · DOM · события</p>
+      <p class="site-header__status"><span aria-hidden="true"></span> Стартовый проект</p>
+    </header>
+
+    <main class="page" id="collection">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="intro__eyebrow">Демонстрационная тема</p>
+        <h1 id="page-title">Шесть идей,<br />которые <em>изменили web</em></h1>
+        <p class="intro__lead">
+          Выберите карточку, отфильтруйте коллекцию или доверьте выбор случаю.
+          Пока это статичная страница — поведение появится после вашей реализации.
+        </p>
+      </section>
+
+      <section class="workspace" aria-label="Интерактивная коллекция">
+        <div class="catalog">
+          <div class="toolbar">
+            <div class="filters" aria-label="Фильтр коллекции">
+              <button
+                class="filter-button filter-button--active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                Все
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="foundation"
+                aria-pressed="false"
+              >
+                Основа
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="interface"
+                aria-pressed="false"
+              >
+                Интерфейс
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="platform"
+                aria-pressed="false"
+              >
+                Платформа
+              </button>
+            </div>
+
+            <p class="result-count" aria-live="polite">
+              Показано карточек: <strong id="visible-count">6</strong>
+            </p>
+          </div>
+
+          <div class="collection-grid">
+            <button
+              class="collection-card"
+              type="button"
+              data-title="HTML"
+              data-description="Язык разметки, который задает смысл и структуру содержимого web-страницы."
+              data-category="foundation"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>01</span><span>Основа</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">&lt;/&gt;</span>
+              <span class="collection-card__title">HTML</span>
+              <span class="collection-card__summary">Структура и смысл документа</span>
+            </button>
+
+            <button
+              class="collection-card"
+              type="button"
+              data-title="CSS"
+              data-description="Язык стилей, который управляет композицией, оформлением и адаптацией интерфейса."
+              data-category="interface"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>02</span><span>Интерфейс</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">{ }</span>
+              <span class="collection-card__title">CSS</span>
+              <span class="collection-card__summary">Композиция и визуальный язык</span>
+            </button>
+
+            <button
+              class="collection-card"
+              type="button"
+              data-title="JavaScript"
+              data-description="Язык программирования, который добавляет странице состояние и реакцию на действия пользователя."
+              data-category="interface"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>03</span><span>Интерфейс</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">JS</span>
+              <span class="collection-card__title">JavaScript</span>
+              <span class="collection-card__summary">Поведение и состояние</span>
+            </button>
+
+            <button
+              class="collection-card"
+              type="button"
+              data-title="DOM"
+              data-description="Объектное представление документа, через которое JavaScript читает и изменяет страницу."
+              data-category="foundation"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>04</span><span>Основа</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">◇</span>
+              <span class="collection-card__title">DOM</span>
+              <span class="collection-card__summary">Страница как дерево объектов</span>
+            </button>
+
+            <button
+              class="collection-card"
+              type="button"
+              data-title="HTTP"
+              data-description="Протокол обмена данными, который связывает браузер с сервером и другими ресурсами сети."
+              data-category="platform"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>05</span><span>Платформа</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">↗</span>
+              <span class="collection-card__title">HTTP</span>
+              <span class="collection-card__summary">Обмен данными в сети</span>
+            </button>
+
+            <button
+              class="collection-card"
+              type="button"
+              data-title="Web API"
+              data-description="Набор возможностей браузера: события, навигация, мультимедиа, сеть и работа с устройством."
+              data-category="platform"
+              aria-controls="details-panel"
+              aria-pressed="false"
+            >
+              <span class="collection-card__meta">
+                <span>06</span><span>Платформа</span>
+              </span>
+              <span class="collection-card__symbol" aria-hidden="true">＋</span>
+              <span class="collection-card__title">Web API</span>
+              <span class="collection-card__summary">Возможности браузерной среды</span>
+            </button>
+          </div>
+        </div>
+
+        <aside
+          class="details-panel"
+          id="details-panel"
+          aria-labelledby="details-title"
+          aria-live="polite"
+        >
+          <div class="details-panel__top">
+            <span class="details-panel__label">Выбранный элемент</span>
+            <span class="details-panel__marker" aria-hidden="true"></span>
+          </div>
+
+          <div class="details-panel__content">
+            <p class="details-panel__number" aria-hidden="true">DETAIL / 01</p>
+            <h2 id="details-title">Выберите карточку</h2>
+            <p id="details-description">
+              Здесь появится описание выбранного элемента. Используйте данные из
+              атрибутов карточки, не дублируйте тексты в JavaScript.
+            </p>
+          </div>
+
+          <div class="details-panel__actions">
+            <button class="action-button action-button--primary" id="random-button" type="button">
+              Случайный выбор <span aria-hidden="true">↗</span>
+            </button>
+            <button class="action-button" id="reset-button" type="button">Сбросить</button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="assignment-note" aria-labelledby="assignment-title">
+        <p class="assignment-note__index">HOMEWORK / 03</p>
+        <div>
+          <h2 id="assignment-title">Ваш код должен выдерживать сочетание сценариев.</h2>
+          <p>
+            Проверьте не только каждый клик отдельно, но и последовательности:
+            выбор → фильтр → случайный выбор → сброс.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>НИУ ВШЭ · Разработка web-интерфейсов</p>
+      <a href="#collection">Наверх ↑</a>
+    </footer>
+  </body>
+</html>
