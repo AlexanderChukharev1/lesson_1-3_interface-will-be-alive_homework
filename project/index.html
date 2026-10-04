@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Учебный проект: интерактивная коллекция на JavaScript и DOM API."
+      content="Интерактивная коллекция городов мира из России, США и Китая."
     />
-    <title>Интерактивная коллекция — ДЗ 3</title>
+    <title>Города мира — интерактивная коллекция</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <header class="site-header">
       <a class="brand" href="#collection" aria-label="К началу коллекции">
@@ -19,16 +20,24 @@
       </a>
 
       <p class="site-header__course">JavaScript · DOM · события</p>
-      <p class="site-header__status"><span aria-hidden="true"></span> Стартовый проект</p>
+      <p class="site-header__status">
+        <span aria-hidden="true"></span>
+        Интерактивная коллекция
+      </p>
     </header>
 
     <main class="page" id="collection">
       <section class="intro" aria-labelledby="page-title">
-        <p class="intro__eyebrow">Демонстрационная тема</p>
-        <h1 id="page-title">Шесть идей,<br />которые <em>изменили web</em></h1>
+        <p class="intro__eyebrow">Города мира</p>
+
+        <h1 id="page-title">
+          Шесть городов<br />
+          из <em>трёх стран</em>
+        </h1>
+
         <p class="intro__lead">
-          Выберите карточку, отфильтруйте коллекцию или доверьте выбор случаю.
-          Пока это статичная страница — поведение появится после вашей реализации.
+          Выберите город, отфильтруйте коллекцию по стране или используйте
+          случайный выбор.
         </p>
       </section>
 
@@ -44,34 +53,38 @@
               >
                 Все
               </button>
+
               <button
                 class="filter-button"
                 type="button"
-                data-filter="foundation"
+                data-filter="russia"
                 aria-pressed="false"
               >
-                Основа
+                Россия
               </button>
+
               <button
                 class="filter-button"
                 type="button"
-                data-filter="interface"
+                data-filter="usa"
                 aria-pressed="false"
               >
-                Интерфейс
+                США
               </button>
+
               <button
                 class="filter-button"
                 type="button"
-                data-filter="platform"
+                data-filter="china"
                 aria-pressed="false"
               >
-                Платформа
+                Китай
               </button>
             </div>
 
             <p class="result-count" aria-live="polite">
-              Показано карточек: <strong id="visible-count">6</strong>
+              Показано карточек:
+              <strong id="visible-count">6</strong>
             </p>
           </div>
 
@@ -79,103 +92,115 @@
             <button
               class="collection-card"
               type="button"
-              data-title="HTML"
-              data-description="Язык разметки, который задает смысл и структуру содержимого web-страницы."
-              data-category="foundation"
+              data-title="Москва"
+              data-description="Столица России и крупнейший город страны, известный Красной площадью, Кремлём и развитой системой метро."
+              data-category="russia"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>01</span><span>Основа</span>
+                <span>01</span>
+                <span>Россия</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">&lt;/&gt;</span>
-              <span class="collection-card__title">HTML</span>
-              <span class="collection-card__summary">Структура и смысл документа</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">RU</span>
+              <span class="collection-card__title">Москва</span>
+              <span class="collection-card__summary">Кремль</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="CSS"
-              data-description="Язык стилей, который управляет композицией, оформлением и адаптацией интерфейса."
-              data-category="interface"
+              data-title="Санкт-Петербург"
+              data-description="Крупный город России на Неве, известный историческим центром, Эрмитажем, дворцами и разводными мостами."
+              data-category="russia"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>02</span><span>Интерфейс</span>
+                <span>02</span>
+                <span>Россия</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">{ }</span>
-              <span class="collection-card__title">CSS</span>
-              <span class="collection-card__summary">Композиция и визуальный язык</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">RU</span>
+              <span class="collection-card__title">Санкт-Петербург</span>
+              <span class="collection-card__summary">Эрмитаж</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="JavaScript"
-              data-description="Язык программирования, который добавляет странице состояние и реакцию на действия пользователя."
-              data-category="interface"
+              data-title="Вашингтон"
+              data-description="Столица США, где находятся Белый дом, Капитолий и многие национальные музеи и памятники."
+              data-category="usa"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>03</span><span>Интерфейс</span>
+                <span>03</span>
+                <span>США</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">JS</span>
-              <span class="collection-card__title">JavaScript</span>
-              <span class="collection-card__summary">Поведение и состояние</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">US</span>
+              <span class="collection-card__title">Вашингтон</span>
+              <span class="collection-card__summary">Белый дом</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="DOM"
-              data-description="Объектное представление документа, через которое JavaScript читает и изменяет страницу."
-              data-category="foundation"
+              data-title="Нью-Йорк"
+              data-description="Крупнейший город США, известный Манхэттеном, Центральным парком, Таймс-сквер и Статуей Свободы."
+              data-category="usa"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>04</span><span>Основа</span>
+                <span>04</span>
+                <span>США</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">◇</span>
-              <span class="collection-card__title">DOM</span>
-              <span class="collection-card__summary">Страница как дерево объектов</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">US</span>
+              <span class="collection-card__title">Нью-Йорк</span>
+              <span class="collection-card__summary">Статуя Свободы</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="HTTP"
-              data-description="Протокол обмена данными, который связывает браузер с сервером и другими ресурсами сети."
-              data-category="platform"
+              data-title="Пекин"
+              data-description="Столица Китая и один из крупнейших городов страны, известный Запретным городом и многочисленными историческими памятниками."
+              data-category="china"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>05</span><span>Платформа</span>
+                <span>05</span>
+                <span>Китай</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">↗</span>
-              <span class="collection-card__title">HTTP</span>
-              <span class="collection-card__summary">Обмен данными в сети</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">CN</span>
+              <span class="collection-card__title">Пекин</span>
+              <span class="collection-card__summary">Запретный город</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="Web API"
-              data-description="Набор возможностей браузера: события, навигация, мультимедиа, сеть и работа с устройством."
-              data-category="platform"
+              data-title="Шанхай"
+              data-description="Один из крупнейших городов Китая и важный финансовый центр, известный районом Пудун и набережной Вайтань."
+              data-category="china"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>06</span><span>Платформа</span>
+                <span>06</span>
+                <span>Китай</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">＋</span>
-              <span class="collection-card__title">Web API</span>
-              <span class="collection-card__summary">Возможности браузерной среды</span>
+
+              <span class="collection-card__symbol" aria-hidden="true">CN</span>
+              <span class="collection-card__title">Шанхай</span>
+              <span class="collection-card__summary">Набережная Вайтань</span>
             </button>
           </div>
         </div>
@@ -187,35 +212,66 @@
           aria-live="polite"
         >
           <div class="details-panel__top">
-            <span class="details-panel__label">Выбранный элемент</span>
+            <span class="details-panel__label">Выбранный город</span>
             <span class="details-panel__marker" aria-hidden="true"></span>
           </div>
 
           <div class="details-panel__content">
-            <p class="details-panel__number" aria-hidden="true">DETAIL / 01</p>
+            <p class="details-panel__number" aria-hidden="true">CITY / 01</p>
+
             <h2 id="details-title">Выберите карточку</h2>
+
             <p id="details-description">
-              Здесь появится описание выбранного элемента. Используйте данные из
-              атрибутов карточки, не дублируйте тексты в JavaScript.
+              Здесь появится краткое описание выбранного города.
             </p>
           </div>
 
+          <section
+            class="history"
+            aria-labelledby="history-title"
+            aria-live="polite"
+          >
+            <p class="history__label" id="history-title">
+              Последние выборы
+            </p>
+
+            <ol class="history__list" id="history-list"></ol>
+
+            <p class="history__empty" id="history-empty">
+              История пока пуста
+            </p>
+          </section>
+
           <div class="details-panel__actions">
-            <button class="action-button action-button--primary" id="random-button" type="button">
-              Случайный выбор <span aria-hidden="true">↗</span>
+            <button
+              class="action-button action-button--primary"
+              id="random-button"
+              type="button"
+            >
+              Случайный выбор
+              <span aria-hidden="true">↗</span>
             </button>
-            <button class="action-button" id="reset-button" type="button">Сбросить</button>
+
+            <button
+              class="action-button"
+              id="reset-button"
+              type="button"
+            >
+              Сбросить
+            </button>
           </div>
         </aside>
       </section>
 
       <section class="assignment-note" aria-labelledby="assignment-title">
-        <p class="assignment-note__index">HOMEWORK / 03</p>
+        <p class="assignment-note__index">COLLECTION / 03</p>
+
         <div>
-          <h2 id="assignment-title">Ваш код должен выдерживать сочетание сценариев.</h2>
+          <h2 id="assignment-title">Три страны мира.</h2>
+
           <p>
-            Проверьте не только каждый клик отдельно, но и последовательности:
-            выбор → фильтр → случайный выбор → сброс.
+            Коллекция делит города по странам: Россия, США и Китай.
+            В каждой категории представлены два города.
           </p>
         </div>
       </section>
