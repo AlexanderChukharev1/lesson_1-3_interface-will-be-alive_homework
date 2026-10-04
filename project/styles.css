@@ -395,6 +395,46 @@ a:focus-visible {
   line-height: 1.65;
 }
 
+.history {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+}
+
+.history__label {
+  margin: 0 0 0.7rem;
+  color: rgb(255 255 255 / 70%);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.history__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history__item {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.history__empty {
+  margin: 0;
+  color: rgb(255 255 255 / 52%);
+  font-size: 0.82rem;
+}
+
 .details-panel__actions {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -418,7 +458,7 @@ a:focus-visible {
 }
 
 .details-panel--pulse {
-  animation: panel-pulse 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: panel-pulse 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .assignment-note {
@@ -475,8 +515,8 @@ a:focus-visible {
 
 @keyframes panel-pulse {
   0% {
-    transform: scale(0.985);
-    filter: brightness(1.18);
+    transform: scale(0.97);
+    filter: brightness(1.12);
   }
 
   100% {
